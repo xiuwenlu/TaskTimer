@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>TASK TIMER</title>
+	<style type="text/css">
+		body { 
+			background-color: #6CAEFF;
+			font-family: .SFNSDisplay-Regular;
+			font-size: 24px;
+			color: #FFFFFF;
+		}
+
+		h1 {
+			color: #FFFFFF; 
+			letter-spacing: 7.7px;
+		}
+
+		form {
+	  		position: relative;
+		}
+		input {
+		  width: 50%;
+		  padding-top: 175px;
+		  border: 0;
+		  outline: 0;
+		  background: transparent;
+		  border-bottom: 1px solid white;
+		  font-family: .SFNSDisplay-Regular;
+		  font-size: 24px;
+		  color: #FFFFFF;
+		}
+
+		::-webkit-input-placeholder {
+		color: #FFFFFF;
+		}
+
+		button {
+		  width: 90px;
+		  padding-top: 155px;
+		  padding-right: 250px;
+		  position: absolute;
+		  right: 0;
+		  outline:0;
+		  border: none;
+		  background-color : #6CAEFF;
+		  cursor: pointer;
+		}
+	</style>
+
+<!-- this creates the timer icon -->
+	<h1 style="text-align:center;"> 
+		<svg width="49px" height="56px" viewBox="574 66 49 56" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	    <g id="Group" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(575.000000, 66.000000)">
+	        <circle id="Oval-1" stroke="#FFFFFF" cx="23.5" cy="31.5" r="23.5"></circle>
+	        <rect id="Rectangle-1" fill="#FFFFFF" x="21" y="0" width="5" height="8"></rect>
+	        <rect id="Rectangle-1-Copy" fill="#FFFFFF" x="25" y="2" width="2" height="5"></rect>
+	        <rect id="Rectangle-1-Copy-2" fill="#FFFFFF" x="20" y="2" width="2" height="5"></rect>
+	        <g id="Rectangle-4-+-Oval-2" transform="translate(20.500000, 20.500000)" fill="#FFFFFF">
+	            <rect id="Rectangle-4" x="2" y="0" width="2" height="11"></rect>
+	            <circle id="Oval-2" cx="3" cy="11" r="3"></circle>
+	        </g>
+	    </g>
+		</svg>
+		TASK TIMER
+	</h1>
+</head>
+
+<body>
+	
+<!-- this creates the input for task name and submits form -->
+	<form action = "TaskTimer2.html?add=1" method="GET" style="text-align:center;">
+		<!-- input task name -->
+		<input type="text" name="TaskName" placeholder="Enter task name" id= "taskID">
+		<!-- submit task name and start -->
+		<button type="submit" id= "submitID" >
+		
+			<svg width="56px" height="59px" viewBox="1050 474 56 59" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+			    <defs>
+			        <ellipse id="path-1" cx="1078" cy="502" rx="28" ry="28"></ellipse>
+			        <filter x="-50%" y="-50%" width="200%" height="200%" filterUnits="objectBoundingBox" id="filter-2">
+			            <feOffset dx="0" dy="3" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+			            <feColorMatrix values="0 0 0 0 1   0 0 0 0 0.834615232   0 0 0 0 0.0983467487  0 0 0 1 0" type="matrix" in="shadowOffsetOuter1"></feColorMatrix>
+			        </filter>
+
+			    </defs>
+
+			    <g id="Oval-3" stroke="none" fill="none">
+			        <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+			        <use fill="#F8E81C" fill-rule="evenodd" xlink:href="#path-1"></use>
+			        <polygon id="path-2" points="1070.66016 491.882812 1070.66016 513.432852 1091.51562 502.476562" fill = "#BA900A"></polygon>
+			    </g>
+			</svg>
+
+		</button>
+		<script type="text/javascript">
+			localStorage.setItem("ValEntered", document.getElementById("taskID"));
+		</script>
+	</form>
+</body>
+</html>

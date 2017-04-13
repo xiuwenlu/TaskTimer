@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html>
+	<head lang="en">
+	<meta charset="UTF-8">
+	<title>TASK TIMER</title>
+	<style>
+		body { 
+			background-color: #FFFFFF;
+			font-family: .SFNSDisplay-Regular;
+			font-size: 24px;
+			color: #FFFFFF;
+			}
+		h1  {
+			color: #FFFFFF; 
+			letter-spacing: 7.7px;
+			background-color: #6CAEFF;
+			margin-top:-15px; 
+			margin-left:-15px; 
+			margin-right:-15px;
+			padding-bottom: 50px;
+			padding-top: 50px;
+			text-align: center;
+			}
+		p   {
+			color: #D9D9D9;
+			margin-left:440px;
+		  	margin-right:430px;
+		  	font-size: 12px;
+			padding-bottom: 20px;
+
+		  	text-align: center;
+		}
+
+		::-webkit-input-placeholder {
+			color: #D8D8D8;
+		}
+			
+		input {
+		  width: 50%;
+		  padding-top: 75px;
+		  border: 0;
+		  outline: 0;
+		  background: transparent;
+		  border-bottom: 1px solid #D8D8D8;
+		  font-family: .SFNSDisplay-Regular;
+		  font-size: 24px;
+		  color: #888888;
+		  margin-left:250px; 
+		}
+		.addBtn {
+		    cursor: pointer;
+		    width: 25%;
+		}
+		ul {
+		  margin-left:210px;
+		  margin-right:220px;
+		  padding: 100;
+		  list-style: none;
+		  margin-top: 80px;
+
+		}
+
+		ul li.checked:before{
+		  content:'\2713';
+		  background: transparent;
+		  color: #8EF377;
+		  /*cursor: pointer;*/
+
+		}
+		.doneBtn{
+			size:250px;
+			cursor: pointer;
+			color:#8EF377;
+			position: absolute;
+			background: transparent;
+  			right: 0;
+  			float: right;
+  			border:none;
+  			margin-right: 15px;
+  			height: 23px
+		}
+		.pauseBtn{
+			cursor: pointer;
+			color:#8EF377;
+  			right: 0;
+  			float: right;
+  			border: none;
+  			background: transparent;
+		}
+		.close {
+			float: left;
+			margin-right: 30px;
+			border: none;
+			background: transparent;
+			cursor: pointer;
+		}
+
+
+		ul li {
+		  position: relative;
+		  padding: 40px 40px 30px 40px;
+		  margin: 0 0 5px 0;
+
+		  font-size: 18px;
+		  transition: 0.2s;
+		  border:1px solid #D8D8D8;
+		  color: #888888;
+		  box-shadow: 3px 3px 3px #888888;
+
+		  /* make the list items unselectable */
+		  -webkit-user-select: none;
+		  -moz-user-select: none;
+		  -ms-user-select: none;
+		  user-select: none;
+		}
+
+		ul li:hover {
+ 			background: #F9F9F9;
+		}
+		
+	</style>
+
+		<!-- this creates the timer icon -->
+		<h1 style="text-align:center;"> 
+			<svg width="49px" height="56px" viewBox="574 66 49 56" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+			    <g id="Group" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(575.000000, 66.000000)">
+			        <circle id="Oval-1" stroke="#FFFFFF" cx="23.5" cy="31.5" r="23.5"></circle>
+			        <rect id="Rectangle-1" fill="#FFFFFF" x="21" y="0" width="5" height="8"></rect>
+			        <rect id="Rectangle-1-Copy" fill="#FFFFFF" x="25" y="2" width="2" height="5"></rect>
+			        <rect id="Rectangle-1-Copy-2" fill="#FFFFFF" x="20" y="2" width="2" height="5"></rect>
+			        <g id="Rectangle-4-+-Oval-2" transform="translate(20.500000, 20.500000)" fill="#FFFFFF">
+			            <rect id="Rectangle-4" x="2" y="0" width="2" height="11"></rect>
+			            <circle id="Oval-2" cx="3" cy="11" r="3"></circle>
+			        </g>
+			    </g>
+			</svg>
+			TASK TIMER
+		</h1>
+	</head>
+
+	<body>
+		<div id="myDIV" class="header">
+		<!-- this creates the input for task name and submits form -->
+			<!-- input task name -->
+			<input type="text" placeholder="Enter task name" id= "NameEntered">
+			<!-- add task name and start -->
+			<span onclick="newItem()" class="addBtn">
+				 <svg width="56px" height="59px" viewBox="1050 474 56 59" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+				    <defs>
+				        <ellipse id="path-1" cx="1078" cy="502" rx="28" ry="28"></ellipse>
+				        <filter x="-50%" y="-50%" width="200%" height="200%" filterUnits="objectBoundingBox" id="filter-2">
+				            <feOffset dx="0" dy="3" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+				            <feColorMatrix values="0 0 0 0 1   0 0 0 0 0.834615232   0 0 0 0 0.0983467487  0 0 0 1 0" type="matrix" in="shadowOffsetOuter1"></feColorMatrix>
+				        </filter>
+
+				    </defs>
+
+				    <g id="Oval-3" stroke="none" fill="none">
+				        <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+				        <use fill="#F8E81C" fill-rule="evenodd" xlink:href="#path-1"></use>
+				        <polygon id="path-2" points="1070.66016 491.882812 1070.66016 513.432852 1091.51562 502.476562" fill = "#BA900A"></polygon>
+				    </g>
+				</svg>
+			</span>
+		</div>
+
+		<ul id="TaskList">
+		  <li id="Name"></li>
+		</ul>
+
+		<script type="text/javascript">
+			
+			var timerVarArr = [];
+			var paused = false;
+			// get the task entered on previous page and create new task box
+			function getParameterByName(value) {
+			  	url = window.location.href;
+			    name = name.replace(/[\[\]]/g, "\\$&");
+			    var regex = new RegExp("[?&]" + value + "(=([^&#]*)|&|#|$)"),
+			        results = regex.exec(url);
+			    if (!results) return null;
+			    if (!results[2]) return '';
+			    document.getElementById("Name").innerHTML = decodeURIComponent(results[2].replace(/\+/g, " ")) + "&nbsp&nbsp&nbsp&nbsp&nbsp";
+			    return decodeURIComponent(results[2].replace(/\+/g, " "));
+			}
+			var param = getParameterByName('TaskName');
+
+			// Create a close button and append it to list item
+			// create a pause button and a done button 
+			var myNodelist = document.getElementsByTagName("LI");
+			var i =0;
+			var span = document.createElement("button");
+			var txt = document.createTextNode("\u00D7");
+			span.className = "close";
+			span.appendChild(txt);
+			myNodelist[i].appendChild(span);
+
+			var elapsedSeconds = 0;
+			function countTimer2() {
+			   elapsedSeconds++;
+			   var hr = Math.floor(elapsedSeconds /3600);
+			   var min = Math.floor((elapsedSeconds - hr*3600)/60);
+			   var sec = elapsedSeconds - (hr*3600 + min*60);
+			   document.getElementById("timer0").innerHTML = hr + " hrs " + min + " mins " + sec + " secs";
+			  }
+
+			var spanTime0 = document.createElement("text");
+			spanTime0.className = "timer";
+			spanTime0.id = "timer0";
+
+			myNodelist[i].appendChild(spanTime0);
+			timerVar0 = setInterval(countTimer2, 1000);
+			timerVarArr.push(timerVar0);
+
+			var spanPause = document.createElement("button");
+			var pauseSymb = document.createTextNode("\u23F8");
+			spanPause.className = "pauseBtn";
+			spanPause.id = "p0";
+			spanPause.appendChild(pauseSymb);
+			myNodelist[i].appendChild(spanPause);
+
+			var spanDone = document.createElement("button");
+			var checkmark = document.createTextNode('\u2713');
+			spanDone.className = "doneBtn";
+			spanDone.id = "d0";
+			spanDone.appendChild(checkmark);
+			myNodelist[i].appendChild(spanDone);
+			 
+
+			// Click on a close button to hide the current list item
+
+			var close = document.getElementsByClassName("close");
+			var i;
+			for (i = 0; i < close.length; i++) {
+			  close[i].onclick = function() {
+			    var div = this.parentElement;
+			    div.style.display = "none";
+			  }
+			}
+
+			//click on check mark to end timer
+			var done = document.getElementsByClassName("doneBtn");
+			var i;
+			for (i = 0; i < done.length; i++) {
+			  done[i].onclick = function() {
+			    var div = this.parentElement;
+			    clearInterval(timerVar0);
+			    var div = this.parentElement;
+			    div.style.background = "#F9F9F9";
+			    div.style.color = "#D9D9D9" ;
+			    this.style.visibility = "hidden";
+			    document.getElementById("p0").style.visibility = "hidden";
+			  }
+			}
+
+			// pause timer
+			var pause = document.getElementsByClassName("pauseBtn");
+			var i;
+			for (i = 0; i < done.length; i++) {
+			  pause[i].onclick = function() {
+			    var div = this.parentElement;
+			    if (!paused) {
+			    	clearInterval(timerVar0);
+			    	delete timerVar0;
+			    	paused = true;
+			    } else {
+			    	timerVar0 = setInterval(countTimer2(), 1000);
+			    	paused = false;
+			    }
+			    // clearInterval(timerVarArr[i]);
+			  }
+			}
+
+			// Add a "checked" symbol when clicking on a list item
+			var list = document.querySelector('ul');
+			list.addEventListener('click', function(ev) {
+			  if (ev.target.tagName === 'LI') {
+			    ev.target.classList.toggle('checked');
+
+			  }
+			}, false);
+
+			var index = 1; //index = this item number
+			// Create a new list item when clicking on the "Add" button
+			function newItem() {
+			  var li = document.createElement("li");
+			  var inputValue = document.getElementById("NameEntered").value;
+
+			  var t = document.createTextNode(inputValue +'\xa0\xa0\xa0\xa0\xa0\xa0');
+			  li.appendChild(t);
+			  if (inputValue === '') {
+			    alert("Please name your task");
+			  } else {
+			    document.getElementById("TaskList").appendChild(li);
+			  }
+			  document.getElementById("NameEntered").value = "";
+
+			  var span = document.createElement("button");
+			  var txt = document.createTextNode("\u00D7");
+			  span.className = "close";
+			  span.appendChild(txt);
+			  li.appendChild(span);
+
+
+			  // start timer on task
+			  var totalSeconds = 0;
+			  var timerId = "timer" + String(index);
+			  timerId.replace(/^\s+|\s+$/g,"");
+
+			  var spanTime = document.createElement("text");
+			  spanTime.id = timerId;
+			  spanTime.className = "timer"
+			  li.appendChild(spanTime);
+			  var varTime = setInterval(countTimer(timerId), 1000);
+			  timerVarArr.push(varTime);
+
+			  function countTimer(id) {
+				   totalSeconds++;
+				   var hour = Math.floor(totalSeconds /3600);
+				   var minute = Math.floor((totalSeconds - hour*3600)/60);
+				   var seconds = totalSeconds - (hour*3600 + minute*60);
+				   document.getElementById(id).innerHTML = hour + " hrs " + minute + " mins " + seconds + " secs";
+			  }
+
+			  var spanPause = document.createElement("button");
+			  var pauseSymb = document.createTextNode("\u23F8");
+			  spanPause.className = "pauseBtn";
+			  var p = "p" + String(index);
+			  p.replace(/^\s+|\s+$/g,"");
+			  spanPause.id = p;
+			  spanPause.appendChild(pauseSymb);
+			  li.appendChild(spanPause);
+
+			  var spanDone = document.createElement("button");
+			  var checkmark = document.createTextNode('\u2713');
+			  spanDone.className = "doneBtn";
+			  var d = "d" + String(index);
+			  d.replace(/^\s+|\s+$/g,"");
+			  spanDone.id = d;
+			  spanDone.appendChild(checkmark);
+			  li.appendChild(spanDone);
+
+			  for (i = 0; i < close.length; i++) {
+			    close[i].onclick = function() {
+			      var div = this.parentElement;
+			      div.style.display = "none";
+			    }
+			  }
+			  index++;
+			}
+		</script>
+		<p style = "text-align:centered;"> This is a simple tool to track tasks that <br> lasts for how long, be efficient!</p>
+
+	</body>
+
+</html>
